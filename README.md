@@ -5,8 +5,4 @@
 
 ## Recursos
 * [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links).
-
-Prueba (Borra esto :3)
-
-prueba 2
- prueba 3
+* [Video guía de git y github](https://www.youtube.com/watch?v=sH9g77J92ns&ab_channel=CodeWar).
