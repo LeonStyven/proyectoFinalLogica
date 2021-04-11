@@ -1,4 +1,4 @@
-# proyectoFinalLogica
+# :beginner:proyectoFinalLogica:beginner:
 ![montanas-con-nieve-en-el-bosque_2560x1440_xtrafondos com](https://user-images.githubusercontent.com/77738709/114289280-44ec8a80-9a3c-11eb-9d1d-f8703f18093e.jpg)
 ## Miembros
 * Julian Styven Colorado Agudelo
