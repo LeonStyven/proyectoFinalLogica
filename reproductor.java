@@ -8,7 +8,6 @@ public class reproductor {
     }
     
 
-
 public static void menu(){
 
     Scanner reply = new Scanner(System.in);
@@ -24,7 +23,10 @@ public static void menu(){
         if(dato!=salir && 1<=dato && dato<=salir){
             
             /*Se usa un switch segun la cantidad de opciones, cada caso llama a la funcion correspondiente*/
-
+            switch(dato){
+                case 1: mostrarcanciones();
+                break;
+            }
             
 
 
