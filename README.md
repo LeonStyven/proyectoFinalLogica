@@ -1,5 +1,7 @@
 # :beginner:proyectoFinalLogica:beginner:
-![montanas-con-nieve-en-el-bosque_2560x1440_xtrafondos com](https://user-images.githubusercontent.com/77738709/114289280-44ec8a80-9a3c-11eb-9d1d-f8703f18093e.jpg)
+## Descripcion
+![Code Wallpaper](https://i.pinimg.com/originals/7a/9e/eb/7a9eeb4fa972a27c412e6a114386115b.jpg)
+El programa funcionara a modo de reproductor de musica, y contara con varios añadidos como la posibilidad de cambiar el volumen o crear playlists.
 ## Miembros
 * Julian Styven Colorado Agudelo
 * Santiago Bautista Bustamante.
