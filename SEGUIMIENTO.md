@@ -53,3 +53,14 @@
 	
 	* Aún no aprendemos a interactuar directamente con archivos del sistema.
 
+# Tuesday, April 27
+## ¿Que hemos hecho?
+
+	1. Cambiamos el proposito del proyecto, pasando a tener un distintivo directamente vinculado con el titulo: "Listen Together"
+	
+## ¿Que vamos a hacer?
+
+	1. Comenzaremos con la implementacion de la funcion estrella, y en paralelo incluiremos poco a poco las funcionalidades que nos proporciona el profesor
+
+
+
