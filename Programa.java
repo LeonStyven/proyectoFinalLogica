@@ -80,6 +80,16 @@ public class Programa{
 					      break;
 				case "ñ": caracter = '\u00F1';
 					      break;
+
+				case "É": caracter = '\u00C9';
+						  break;
+
+				case "Ó": caracter = '\u00D3';
+						  break;
+				case "Ú": caracter = '\u00DA';
+						  break;
+				case "Ñ": caracter = '\u00D1';
+						  break;
 			}
 			// System.out.println("\\u" + Integer.toHexString('÷' | 0x10000).substring(1));
 			str.replace(indice,indice+2,""+caracter);
@@ -97,6 +107,12 @@ public class Programa{
 		str = convertirUnicode("ó",str);
 		str = convertirUnicode("ú",str);
 		str = convertirUnicode("ñ",str);
+
+		str = convertirUnicode("É",str);
+
+		str = convertirUnicode("Ó",str);
+		str = convertirUnicode("Ú",str);
+		str = convertirUnicode("Ñ",str);
 
 		System.out.println(str);
 	}
@@ -145,11 +161,12 @@ public class Programa{
 				//TODO: Terminar la funcion para que imprima todos los caracteres especiales que use el programa
 				imprimir("Ingrese una opción así:");
 				imprimir("1. Buscar canción");
-				imprimir("2. Reproducir canción");
-				imprimir("3. Mostrar Letra");
+				imprimir("2. Reperererroducir canción");
+				imprimir("3. Mostrar Letraaaaaaaaa");
 				imprimir("4. Detener Canción");
 				imprimir("5. Imprimir lista de Canciones");
 				imprimir("6. Salir");
+				
 				//TODO: Ojo falta validar la entrada de datos
 				centinela = ConsoleInput.getInt();
 

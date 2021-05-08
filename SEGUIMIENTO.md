@@ -62,5 +62,20 @@
 
 	1. Comenzaremos con la implementacion de la funcion estrella, y en paralelo incluiremos poco a poco las funcionalidades que nos proporciona el profesor
 
+# Friday, May 7
+## ¿Que hemos hecho?
+
+	1. Hemos definido nuestro programa con un funcionamiento basico segun lo construido junto al profesor durante la clase, sin embargo hemos definido "Listen Together" como nuestra funcionalidad estrella, va a constar de una aplicacion cliente/servidor donde el servidor sera quien escoja la cancion que todos los clientes y el propio servidor van a escuchar.
+
+	2. Se arreglo gran parte del problema de los caracteres especiales
+	
+## ¿Que vamos a hacer?
+
+	1. Terminar de solucionar las dificultades con los caracteres Á e Í
+
+## ¿Que dificultades hemos tenido?
+
+	1. Nos cuesta entender el funcionamiento de algunos fragmentos de codigo proporcionado por el profesor, sin embargo estamos trabajando en esto.
+
 
 
