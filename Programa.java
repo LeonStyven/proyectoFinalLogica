@@ -255,16 +255,17 @@ public class Programa{
 
 						if(centinela == 1)
 						{
-							imprimir("Ingrese un numero del 1 al 15 para buscar una cancion, el numero de canciones actuales son: "+(info_canciones.length-1));
+							imprimir("                      Ingrese un numero del 1 al 15 para buscar una cancion, el numero de canciones actuales son: "+(info_canciones.length-1));
 							indice_cancion = ConsoleInput.getInt();
 		
 							inicio_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.INICIO_CANCION]);
 							fin_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.FIN_CANCION]);
 		
 							System.out.println();
-							imprimir("Nombre: "+info_canciones[indice_cancion][ConsoleData.NOMBRE_CANCION]);
-							imprimir("Autor: "+info_canciones[indice_cancion][ConsoleData.AUTOR_CANCION]);
-						}
+							imprimir("                                                           Nombre: "+info_canciones[indice_cancion][ConsoleData.NOMBRE_CANCION]);
+							imprimir("                                                              Autor: "+info_canciones[indice_cancion][ConsoleData.AUTOR_CANCION]);
+							imprimir(" ");
+						}	
 
 						if(centinela == 2)
 						{
