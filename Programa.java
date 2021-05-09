@@ -136,11 +136,11 @@ public class Programa{
 		{
 			str.append(data[i]+"\n");		
 		}
-		for (int j = 0; j <= str.length()-1; j ++){
+		/*for (int j = 0; j <= str.length()-1; j ++){
 			if(str(j).equals("\u003B")){
 				str.replace("\u003B", "\u0020");
 			}			
-		}
+		}*/
 		return str;
 	}
 
@@ -199,11 +199,13 @@ public class Programa{
 				System.out.println("         |    =============================================================================================================       |.");
 				System.out.println("         |                                                                                                                        |.");
 
+				//Variables del servidor
+
 				ServerSocket server;
 				Socket socket;
 				int puerto = 9000;
-				DataOutputStream salida;
-				BufferedReader entrada;
+				DataOutputStream salidaServidor;
+				BufferedReader entradaServidor;
 
 				server = new ServerSocket(puerto);
 				socket = new Socket();
@@ -213,7 +215,9 @@ public class Programa{
 				System.out.println("         |    =============================================================================================================       |.");
 				System.out.println("         |                                                                                                                        |.");
 
-				socket = server.accept();
+				socket = server.accept(); //Aceptar conexiones entrantes
+
+
 				imprimir          ("         |                                                 Conexión establecida!                                                  |.");
 				System.out.println("         |                                                                                                                        |.");
 				System.out.println("         |    =============================================================================================================       |.");
@@ -228,26 +232,18 @@ public class Programa{
 					imprimir      ("         |                                               5. Imprimir lista de Canciones                                           |.");
 					imprimir      ("         |                                               6. Salir                                                                 |.");
 
+					System.out.println("Servidor iniciado correctamente");
+
 
 					centinela = ConsoleInput.getInt();
 
-					/* ==================== [SERVIDOR] ==================== */
-
-
-					
-
-
-					//TODO: Ojo falta validar la entrada de datos
 					
 					if (centinela >= 1 && centinela <= 6){
-					
-						entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-						//String mensaje = entrada.readLine();
-						//System.out.println(mensaje);
 
-						salida = new DataOutputStream(socket.getOutputStream());
-						salida.writeUTF("Adios mundo");
+						salidaServidor = new DataOutputStream(socket.getOutputStream());
+						salidaServidor.writeUTF("Adios mundo");	
+
 
 						if(centinela == 2)
 						{
@@ -321,19 +317,26 @@ public class Programa{
 				//Hace falta que el cliente reciba las instrucciones del servidor y las ejecute.
 				Socket cliente;
     			int puerto = 9000;
+				BufferedReader entradaCliente, tecladoCliente;
+				PrintStream salidaCliente;
 				Scanner scanner = new Scanner(System.in);
 
 				imprimir("Ingrese la dirección IP del Director: ");
 				String ip = scanner.nextLine();
 
-				BufferedReader entrada, teclado;
-				PrintStream salida;
-
 				cliente = new Socket(ip,puerto);
+				System.out.println("Cliente vinculado correctamente");
 
-				entrada = new BufferedReader (new InputStreamReader(cliente.getInputStream()));
-				String msg = entrada.readLine();
+				/*[=================CLIENTE===================]*/
+
+				entradaCliente = new BufferedReader (new InputStreamReader(cliente.getInputStream()));
+
+				String msg = entradaCliente.readLine();
             	System.out.println(msg);
+				
+
+
+				System.out.println("Aqui termina el cliente");
 
 			}else{
 				imprimir("Ha ingresado un valor inválido");
