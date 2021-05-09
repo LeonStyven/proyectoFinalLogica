@@ -30,4 +30,5 @@ public class tipoUsuario {
         System.out.println("         |                                           IP Local : "+address.getHostAddress()+"                                                      |.");
 
     }
+
 }

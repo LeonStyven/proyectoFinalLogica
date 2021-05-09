@@ -6,6 +6,9 @@ import static org.fusesource.jansi.Ansi.Color.*;
 import java.net.*;
 import java.io.*;
 
+//Librerias del teclado
+import java.util.Scanner;
+
 
 public class Programa{
 
@@ -165,8 +168,7 @@ public class Programa{
 			borrarDisplay(4);
 			imprimirDisplay(4,16);*/
 
-			displayVacio(100, 100);
-
+			displayVacio(50, 50);
 
 
 			inicio i = new inicio();
@@ -176,58 +178,70 @@ public class Programa{
 			seleccion = us.introduccion();
 
 			if(seleccion==1){
+				System.out.println("         |                                                                                                                        |.");
+				System.out.println("         |    =============================================================================================================       |.");
+				System.out.println("         |                                                                                                                        |.");
+				System.out.println("         |                                                                                                                        |.");
+				imprimir          ("         |                   Como director, tú serás quien elija la canción que todos los usuarios escucharán                     |.");
+				System.out.println("         |                                                                                                                        |.");
+				System.out.println("         |                                                                                                                        |.");
+				System.out.println("         |    =============================================================================================================       |.");
+				System.out.println("         |                                                                                                                        |.");
+				imprimir          ("         |                                               Iniciando Servidor...                                                    |.");
+
+				us.direccionIP();
+
+				System.out.println("         |                                                                                                                        |.");
+				System.out.println("         |    =============================================================================================================       |.");
+				System.out.println("         |                                                                                                                        |.");
+
+				ServerSocket server;
+				Socket socket;
+				int puerto = 9000;
+				DataOutputStream salida;
+				BufferedReader entrada;
+
+				server = new ServerSocket(puerto);
+				socket = new Socket();
+
+				imprimir          ("         |                                                  Esperando Conexión...                                                 |.");
+				System.out.println("         |                                                                                                                        |.");
+				System.out.println("         |    =============================================================================================================       |.");
+				System.out.println("         |                                                                                                                        |.");
+
+				socket = server.accept();
+				imprimir          ("         |                                                 Conexión establecida!                                                  |.");
+				System.out.println("         |                                                                                                                        |.");
+				System.out.println("         |    =============================================================================================================       |.");
+				System.out.println("         |                                                                                                                        |.");
+
 				do{
-					System.out.println("         |                                                                                                                        |.");
-					System.out.println("         |    =============================================================================================================       |.");
-					System.out.println("         |                                                                                                                        |.");
-					System.out.println("         |                                                                                                                        |.");
-					imprimir          ("         |                   Como director, tú serás quien elija la canción que todos los usuarios escucharán                     |.");
-					System.out.println("         |                                                                                                                        |.");
-					System.out.println("         |                                                                                                                        |.");
-					System.out.println("         |    =============================================================================================================       |.");
-					System.out.println("         |                                                                                                                        |.");
-					imprimir          ("         |                                            Iniciando Servidor...                                                       |.");
-
-					us.direccionIP();
-
-					System.out.println("         |                                                                                                                        |.");
-					System.out.println("         |    =============================================================================================================       |.");
-					System.out.println("         |                                                                                                                        |.");
+					imprimir      ("         |                                               Ingrese una opción así:                                                  |.");
+					imprimir      ("         |                                               1. Buscar canción                                                        |.");
+					imprimir      ("         |                                               2. Reproducir canción                                                    |.");
+					imprimir      ("         |                                               3. Mostrar Letra                                                         |.");
+					imprimir      ("         |                                               4. Detener Canción                                                       |.");
+					imprimir      ("         |                                               5. Imprimir lista de Canciones                                           |.");
+					imprimir      ("         |                                               6. Salir                                                                 |.");
 
 
-					/* ==================== [CREACION DEL SERVIDOR] ==================== */
+					centinela = ConsoleInput.getInt();
 
-					ServerSocket server;
-					Socket socket;
-					int puerto = 9000;
-					DataOutputStream salida;
-					BufferedReader entrada;
+					/* ==================== [SERVIDOR] ==================== */
 
-					server = new ServerSocket(puerto);
-					socket = new Socket();
-					socket = server.accept();
 
 					entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-					String mensaje = entrada.readLine();
 
-					System.out.println(mensaje);
-
-
-					imprimir("         |                                    Ingrese una opción así:                                                             |.");
-					imprimir("         |                                    1. Buscar canción                                                                   |.");
-					imprimir("         |                                    2. Reproducir canción                                                         |.");
-					imprimir("         |                                    3. Mostrar Letra                                                                    |.");
-					imprimir("         |                                    4. Detener Canción                                                                  |.");
-					imprimir("         |                                    5. Imprimir lista de Canciones                                                      |.");
-					imprimir("         |                                    6. Salir                                                                            |.");
-					
+					//String mensaje = entrada.readLine();
+					//System.out.println(mensaje);
 
 					salida = new DataOutputStream(socket.getOutputStream());
 					salida.writeUTF("Adios mundo");
 
-					socket.close();
+
+
 					//TODO: Ojo falta validar la entrada de datos
-					centinela = ConsoleInput.getInt();
+					
 	
 					if(centinela == 2)
 					{
@@ -278,14 +292,38 @@ public class Programa{
 						imprimir("Primera estrofa: "+canciones[inicio_letra]);
 						imprimir("Última estrofa: "+canciones[fin_letra]);
 						
-						//TODO:Convertir a unicode mayúsculas y caracteres especiales
 						//TODO:Explicar como funciona el archivo y como se analiza cada línea
 						//TODO:Imprimir la lista completa
+					}
+					if(centinela == 6){
+						imprimir("Finalizando...");
+						socket.close();
 					}
 	
 				}while(centinela!=6);
 			}else if(seleccion == 2){
-				System.out.println("Iniciando cliente... ");
+
+
+				imprimir          ("         |                                               Iniciando Cliente...                                                    |.");
+
+
+				//Hace falta que el cliente reciba las instrucciones del servidor y las ejecute.
+				Socket cliente;
+    			int puerto = 9000;
+				Scanner scanner = new Scanner(System.in);
+
+				imprimir("Ingrese la dirección IP del Director: ");
+				String ip = scanner.nextLine();
+
+				BufferedReader entrada, teclado;
+				PrintStream salida;
+
+				cliente = new Socket(ip,puerto);
+
+				entrada = new BufferedReader (new InputStreamReader(cliente.getInputStream()));
+				String msg = entrada.readLine();
+            	System.out.println(msg);
+
 			}else{
 				imprimir("Ha ingresado un valor inválido");
 			}
