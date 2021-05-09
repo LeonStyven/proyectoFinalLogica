@@ -95,4 +95,18 @@
 	1. Implementar una interfaz por consola tarda mas tiempo de lo esperado.
 
 
+# Sunday, May 9
+## ¿Que hemos hecho?
 
+	1. Validamos la entrada de datos en el menu principal
+	
+## ¿Que vamos a hacer?
+
+	1. Hacer que el cliente ejecute las acciones realizadas por el director.
+	2. Implementar la interfaz por consola del cliente
+	3. 
+
+## ¿Que dificultades hemos tenido?
+
+	1. Implementar una interfaz por consola tarda mas tiempo de lo esperado.
+	2. No encontramos una forma de reemplazar los ";" cuando se muestra la letra de una cancion.
