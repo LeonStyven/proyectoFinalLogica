@@ -1,4 +1,4 @@
-import org.fusesource.jansi.AnsiConsole;
+	import org.fusesource.jansi.AnsiConsole;
 import static org.fusesource.jansi.Ansi.*;
 import static org.fusesource.jansi.Ansi.Color.*;
 
@@ -134,9 +134,13 @@ public class Programa{
 
 		for(int i = inicio; i<=fin; i++)
 		{
-			str.append(data[i]+"\n");
+			str.append(data[i]+"\n");		
 		}
-
+		for (int j = 0; j <= str.length()-1; j ++){
+			if(str(j).equals("\u003B")){
+				str.replace("\u003B", "\u0020");
+			}			
+		}
 		return str;
 	}
 
@@ -230,74 +234,81 @@ public class Programa{
 					/* ==================== [SERVIDOR] ==================== */
 
 
-					entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
-					//String mensaje = entrada.readLine();
-					//System.out.println(mensaje);
-
-					salida = new DataOutputStream(socket.getOutputStream());
-					salida.writeUTF("Adios mundo");
-
+					
 
 
 					//TODO: Ojo falta validar la entrada de datos
 					
-	
-					if(centinela == 2)
-					{
-						audio.seleccionarCancion(info_canciones[1][ConsoleData.RUTA_CANCION]);
-						audio.reproducir();
+					if (centinela >= 1 && centinela <= 6){
+					
+						entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
+						//String mensaje = entrada.readLine();
+						//System.out.println(mensaje);
+
+						salida = new DataOutputStream(socket.getOutputStream());
+						salida.writeUTF("Adios mundo");
+
+						if(centinela == 2)
+						{
+							audio.seleccionarCancion(info_canciones[1][ConsoleData.RUTA_CANCION]);
+							audio.reproducir();
+						}
+		
+						if(centinela == 3)
+						{
+							//TODO: Ojo, falta validar el valor ingresado
+							//TODO: Falta darle formato amigable de lectura al usuario 
+							imprimir("Ingrese indice de la cancion, entre 0 y "+(info_canciones.length-1));
+							indice_cancion = ConsoleInput.getInt();
+		
+							inicio_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.INICIO_CANCION]);
+							fin_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.FIN_CANCION]);
+							
+							letra_cancion = obtenerLetraCancion(inicio_letra,fin_letra,canciones);
+		
+							imprimir(letra_cancion.toString());
+						}
+		
+						if(centinela == 4)
+						{
+							audio.detener();
+						}
+		
+						if(centinela==5)
+						{
+							/* La informacion de las canciones esta
+							en la matriz info_canciones, acá un ejemplo de como imprimir
+							el nombre de la primer canción y su autor */
+							
+							//TODO: Ojo, falta validar el valor ingresado
+							imprimir("Ingrese indice de la cancion, entre 0 y "+(info_canciones.length-1));
+							indice_cancion = ConsoleInput.getInt();
+		
+							inicio_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.INICIO_CANCION]);
+							fin_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.FIN_CANCION]);
+		
+							System.out.println();
+							imprimir("Inicio letra "+inicio_letra);
+							imprimir("Fin letra "+fin_letra);
+							imprimir("Nombre "+info_canciones[indice_cancion][ConsoleData.NOMBRE_CANCION]);
+							imprimir("Autor "+info_canciones[indice_cancion][ConsoleData.AUTOR_CANCION]);
+							imprimir("Archivo "+info_canciones[indice_cancion][ConsoleData.RUTA_CANCION]);
+		
+							imprimir("Primera estrofa: "+canciones[inicio_letra]);
+							imprimir("Última estrofa: "+canciones[fin_letra]);
+							
+							//TODO:Explicar como funciona el archivo y como se analiza cada línea
+							//TODO:Imprimir la lista completa
+						}
+						if(centinela == 6){
+							imprimir("Finalizando...");
+							socket.close();
+						}
+
 					}
-	
-					if(centinela == 3)
-					{
-						//TODO: Ojo, falta validar el valor ingresado
-						//TODO: Falta darle formato amigable de lectura al usuario 
-						imprimir("Ingrese indice de la cancion, entre 0 y "+(info_canciones.length-1));
-						indice_cancion = ConsoleInput.getInt();
-	
-						inicio_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.INICIO_CANCION]);
-						fin_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.FIN_CANCION]);
-						
-						letra_cancion = obtenerLetraCancion(inicio_letra,fin_letra,canciones);
-	
-						imprimir(letra_cancion.toString());
-					}
-	
-					if(centinela == 4)
-					{
-						audio.detener();
-					}
-	
-					if(centinela==5)
-					{
-						/* La informacion de las canciones esta
-						en la matriz info_canciones, acá un ejemplo de como imprimir
-						el nombre de la primer canción y su autor */
-						
-						//TODO: Ojo, falta validar el valor ingresado
-						imprimir("Ingrese indice de la cancion, entre 0 y "+(info_canciones.length-1));
-						indice_cancion = ConsoleInput.getInt();
-	
-						inicio_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.INICIO_CANCION]);
-						fin_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.FIN_CANCION]);
-	
-						System.out.println();
-						imprimir("Inicio letra "+inicio_letra);
-						imprimir("Fin letra "+fin_letra);
-						imprimir("Nombre "+info_canciones[indice_cancion][ConsoleData.NOMBRE_CANCION]);
-						imprimir("Autor "+info_canciones[indice_cancion][ConsoleData.AUTOR_CANCION]);
-						imprimir("Archivo "+info_canciones[indice_cancion][ConsoleData.RUTA_CANCION]);
-	
-						imprimir("Primera estrofa: "+canciones[inicio_letra]);
-						imprimir("Última estrofa: "+canciones[fin_letra]);
-						
-						//TODO:Explicar como funciona el archivo y como se analiza cada línea
-						//TODO:Imprimir la lista completa
-					}
-					if(centinela == 6){
-						imprimir("Finalizando...");
-						socket.close();
+					else{
+						System.out.println("Error, dato invalido");
 					}
 	
 				}while(centinela!=6);
