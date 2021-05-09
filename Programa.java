@@ -136,12 +136,24 @@ public class Programa{
 		{
 			str.append(data[i]+"\n");		
 		}
+<<<<<<< HEAD
 		/*for (int j = 0; j <= str.length()-1; j ++){
 			if(str(j).equals("\u003B")){
 				str.replace("\u003B", "\u0020");
 			}			
 		}*/
+=======
+		/*
+		for (int j = 0; j <= str.length()-1; j ++){
+			if(str(j).equals("\u003B")){
+				str.replace("\u003B", "\u0020");
+			}
+
+		}
+		*/
+>>>>>>> 1539ec280c1cdda42f34b654f45ad80e17134b0e
 		return str;
+
 	}
 
 	public static void main(String[] args) {
@@ -237,6 +249,10 @@ public class Programa{
 
 					centinela = ConsoleInput.getInt();
 
+<<<<<<< HEAD
+=======
+					
+>>>>>>> 1539ec280c1cdda42f34b654f45ad80e17134b0e
 					
 					if (centinela >= 1 && centinela <= 6){
 
@@ -244,6 +260,20 @@ public class Programa{
 						salidaServidor = new DataOutputStream(socket.getOutputStream());
 						salidaServidor.writeUTF("Adios mundo");	
 
+
+						if(centinela == 1)
+						{
+							imprimir("                      Ingrese un numero del 1 al 15 para buscar una cancion, el numero de canciones actuales son: "+(info_canciones.length-1));
+							indice_cancion = ConsoleInput.getInt();
+		
+							inicio_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.INICIO_CANCION]);
+							fin_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.FIN_CANCION]);
+		
+							System.out.println();
+							imprimir("                                                           Nombre: "+info_canciones[indice_cancion][ConsoleData.NOMBRE_CANCION]);
+							imprimir("                                                              Autor: "+info_canciones[indice_cancion][ConsoleData.AUTOR_CANCION]);
+							imprimir(" ");
+						}	
 
 						if(centinela == 2)
 						{
