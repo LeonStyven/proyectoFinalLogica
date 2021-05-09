@@ -77,5 +77,22 @@
 
 	1. Nos cuesta entender el funcionamiento de algunos fragmentos de codigo proporcionado por el profesor, sin embargo estamos trabajando en esto.
 
+# Saturday, May 8
+## ¿Que hemos hecho?
+
+	1. Se implemento el funcionamiento cliente/servidor de forma parcial.
+	2. Se añadio gran parte de la interfaz por consola de la aplicacion.
+	3. Se corrigieron los problemas con los caracteres Á e Í
+	4. Se analizó gran parte del código del profesor
+	
+## ¿Que vamos a hacer?
+
+	1. Hacer que el cliente ejecute las acciones realizadas por el director.
+	2. Implementar la interfaz por consola del cliente
+
+## ¿Que dificultades hemos tenido?
+
+	1. Implementar una interfaz por consola tarda mas tiempo de lo esperado.
+
 
 
