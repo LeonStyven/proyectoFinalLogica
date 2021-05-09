@@ -136,12 +136,16 @@ public class Programa{
 		{
 			str.append(data[i]+"\n");		
 		}
+		/*
 		for (int j = 0; j <= str.length()-1; j ++){
 			if(str(j).equals("\u003B")){
 				str.replace("\u003B", "\u0020");
-			}			
+			}
+
 		}
+		*/
 		return str;
+
 	}
 
 	public static void main(String[] args) {
@@ -237,7 +241,7 @@ public class Programa{
 					
 
 
-					//TODO: Ojo falta validar la entrada de datos
+					
 					
 					if (centinela >= 1 && centinela <= 6){
 					
@@ -248,6 +252,19 @@ public class Programa{
 
 						salida = new DataOutputStream(socket.getOutputStream());
 						salida.writeUTF("Adios mundo");
+
+						if(centinela == 1)
+						{
+							imprimir("Ingrese un numero del 1 al 15 para buscar una cancion, el numero de canciones actuales son: "+(info_canciones.length-1));
+							indice_cancion = ConsoleInput.getInt();
+		
+							inicio_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.INICIO_CANCION]);
+							fin_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.FIN_CANCION]);
+		
+							System.out.println();
+							imprimir("Nombre: "+info_canciones[indice_cancion][ConsoleData.NOMBRE_CANCION]);
+							imprimir("Autor: "+info_canciones[indice_cancion][ConsoleData.AUTOR_CANCION]);
+						}
 
 						if(centinela == 2)
 						{
