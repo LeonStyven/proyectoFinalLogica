@@ -138,8 +138,9 @@ public class ejecucion {
 
 	}
 
-    public static void ejecutar(int centinela){
-        
+    public static void ejecutar(int centinela, int subOpcion){
+
+        //Llamado de las demas funciones de "java"
         Programa programa = new Programa();
         
         AnsiConsole.systemInstall();
@@ -161,7 +162,7 @@ public class ejecucion {
             
 
 			imprimir("                      Ingrese un numero del 1 al 15 para buscar una cancion, el numero de canciones actuales son: "+(info_canciones.length-1));
-			indice_cancion = ConsoleInput.getInt();
+			indice_cancion = subOpcion;
 		
 			inicio_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.INICIO_CANCION]);
 			fin_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.FIN_CANCION]);
@@ -179,7 +180,7 @@ public class ejecucion {
             //TODO: Ojo, falta validar el valor ingresado
             //TODO: Falta darle formato amigable de lectura al usuario 
             imprimir("Ingrese indice de la cancion, entre 0 y "+(info_canciones.length-1));
-            indice_cancion = ConsoleInput.getInt();
+            indice_cancion = subOpcion;
 
             inicio_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.INICIO_CANCION]);
             fin_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.FIN_CANCION]);
@@ -189,6 +190,7 @@ public class ejecucion {
             imprimir(letra_cancion.toString());
         }
         if(centinela == 4){
+
 			audio.detener();
 		}
         if(centinela==5){
@@ -198,7 +200,7 @@ public class ejecucion {
             
             //TODO: Ojo, falta validar el valor ingresado
             imprimir("Ingrese indice de la cancion, entre 0 y "+(info_canciones.length-1));
-            indice_cancion = ConsoleInput.getInt();
+            indice_cancion = subOpcion;
 
             inicio_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.INICIO_CANCION]);
             fin_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.FIN_CANCION]);

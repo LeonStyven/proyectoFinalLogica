@@ -23,21 +23,25 @@ public class Cliente {
                 //Variables para la comunicacion con el servidor
                 in = new DataInputStream(sc.getInputStream());
                 out = new DataOutputStream(sc.getOutputStream());
-                int mensaje;
+                int centinela, subOpcion;
 
                 System.out.println("Conexion con el servidor Exitosa!");
 
-                menu menu = new menu();
-                menu.imprimirmenu();
 
                 do {
-                    mensaje = in.readInt();
-                    System.out.println("El servidor escogio la opcion: " + mensaje);
+                    menu menu = new menu();
+                    menu.imprimirmenu();
+
+                    centinela = in.readInt();
+                    System.out.println("El servidor escogio la opcion: " + centinela);
+                    subOpcion = in.readInt();
+                    System.out.println("Subopcion: " + subOpcion);
 
 
                     ejecucion ejecucion = new ejecucion();
-                    ejecucion.ejecutar(mensaje);
-                } while (mensaje!=6);
+                    ejecucion.ejecutar(centinela, subOpcion);
+
+                } while (centinela!=6);
     
                 
 

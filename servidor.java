@@ -9,7 +9,7 @@ public class servidor {
 
         try {
             //Variable para el manejo del menu
-            int centinela = 0;	
+            int centinela = 0, subOpcion = 0;	
 
             ServerSocket servidor;
             Socket sc;
@@ -22,13 +22,13 @@ public class servidor {
             //Programa programa = new Programa();
 
             ejecucion ejecucion = new ejecucion();
-            ejecucion.ejecutar(centinela);
+            ejecucion.ejecutar(centinela, subOpcion);
 
             System.out.println("         |                                                                                                                        |.");
             System.out.println("         |    =============================================================================================================       |.");
             System.out.println("         |                                                                                                                        |.");
             System.out.println("         |                                                                                                                        |.");
-            ejecucion.imprimir          ("         |                   Como director, tú serás quien elija la canción que todos los usuarios escucharán                     |.");
+            ejecucion.imprimir("         |                   Como director, tú serás quien elija la canción que todos los usuarios escucharán                     |.");
             System.out.println("         |                                                                                                                        |.");
             System.out.println("         |                                                                                                                        |.");
             System.out.println("         |    =============================================================================================================       |.");
@@ -69,13 +69,17 @@ public class servidor {
 
                 //Solicitud del centinela
                 centinela = ConsoleInput.getInt();
+                System.out.println("Ingrese subopcion");
+                subOpcion = ConsoleInput.getInt();
+                
 
                 if(centinela >= 1 && centinela <= 6){
 
                     out.writeInt(centinela);
+                    out.writeInt(subOpcion);
 
                     //ejecucion ejecucion = new ejecucion();
-                    ejecucion.ejecutar(centinela);
+                    ejecucion.ejecutar(centinela, subOpcion);
 
                     if(centinela==6){
                         out.writeUTF("Cerrando Conexion");

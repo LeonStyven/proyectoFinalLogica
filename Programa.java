@@ -19,7 +19,7 @@ public class Programa{
 		Audio audio = new Audio();
 		int indice_cancion = 0;
 		int inicio_letra = 0, fin_letra = 0;
-		int seleccion = 0;
+		int tipoUsuario = 0;
 		String [] canciones;
 		String [][] info_canciones;
 		StringBuilder letra_cancion;
@@ -39,6 +39,7 @@ public class Programa{
 			Thread.sleep(1000);
 			borrarDisplay(4);
 			imprimirDisplay(4,16);*/
+
 			ejecucion ejecucion = new ejecucion();
 
 
@@ -49,14 +50,14 @@ public class Programa{
 			i.saludo();
 
 			tipoUsuario us = new tipoUsuario();
-			seleccion = us.introduccion();
+			tipoUsuario = us.introduccion();
 
-			if(seleccion==1){
+			if(tipoUsuario==1){
 
 				servidor servidor = new servidor();
 				servidor.main();
 
-			}else if(seleccion==2){
+			}else if(tipoUsuario==2){
 
 				Cliente Cliente = new Cliente();
 				Cliente.main();
