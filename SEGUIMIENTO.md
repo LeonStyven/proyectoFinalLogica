@@ -102,14 +102,15 @@
 	2. Se implementó la comunicacion entre servidor y cliente
 	3. El cliente ahora recibe las instrucciones del servidor
 	4. Se separaron las funciones básicas del programa según el valor del centinela, para que así tanto cliente como servidor puedan llamar a las funciones correspondientes
+	5.  el cliente ahora ejecuta las acciones realizadas por el director.
 	
 ## ¿Que vamos a hacer?
 
-	1. Hacer que el cliente ejecute las acciones realizadas por el director.
-	2. Implementar la interfaz por consola del cliente
+	1. Implementar la interfaz por consola del cliente
 
 ## ¿Que dificultades hemos tenido?
 
 	1. Implementar una interfaz por consola tarda mas tiempo de lo esperado.
 	2. No encontramos una forma de reemplazar los ";" cuando se muestra la letra de una cancion.
 	3. Separar las funcionalidades del programa requiere más trabajo del esperado.
+	4. Las funciones principales parecen tener problemas de vinculación.
