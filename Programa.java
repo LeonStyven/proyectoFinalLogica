@@ -136,31 +136,20 @@ public class Programa{
 		{
 			str.append(data[i]+"\n");		
 		}
-<<<<<<< HEAD
 		/*for (int j = 0; j <= str.length()-1; j ++){
 			if(str(j).equals("\u003B")){
 				str.replace("\u003B", "\u0020");
 			}			
 		}*/
-=======
-		/*
-		for (int j = 0; j <= str.length()-1; j ++){
-			if(str(j).equals("\u003B")){
-				str.replace("\u003B", "\u0020");
-			}
-
-		}
-		*/
->>>>>>> 1539ec280c1cdda42f34b654f45ad80e17134b0e
 		return str;
 
 	}
 
 	public static void main(String[] args) {
+
 		AnsiConsole.systemInstall();
 		
 		Audio audio = new Audio();
-		int centinela = 0;	
 		int indice_cancion = 0;
 		int inicio_letra = 0, fin_letra = 0;
 		int seleccion = 0;
@@ -194,185 +183,21 @@ public class Programa{
 			seleccion = us.introduccion();
 
 			if(seleccion==1){
-				System.out.println("         |                                                                                                                        |.");
-				System.out.println("         |    =============================================================================================================       |.");
-				System.out.println("         |                                                                                                                        |.");
-				System.out.println("         |                                                                                                                        |.");
-				imprimir          ("         |                   Como director, tú serás quien elija la canción que todos los usuarios escucharán                     |.");
-				System.out.println("         |                                                                                                                        |.");
-				System.out.println("         |                                                                                                                        |.");
-				System.out.println("         |    =============================================================================================================       |.");
-				System.out.println("         |                                                                                                                        |.");
-				imprimir          ("         |                                               Iniciando Servidor...                                                    |.");
 
-				us.direccionIP();
+				servidor servidor = new servidor();
+				servidor.main();
 
-				System.out.println("         |                                                                                                                        |.");
-				System.out.println("         |    =============================================================================================================       |.");
-				System.out.println("         |                                                                                                                        |.");
+			}else if(seleccion==2){
 
-				//Variables del servidor
-
-				ServerSocket server;
-				Socket socket;
-				int puerto = 9000;
-				DataOutputStream salidaServidor;
-				BufferedReader entradaServidor;
-
-				server = new ServerSocket(puerto);
-				socket = new Socket();
-
-				imprimir          ("         |                                                  Esperando Conexión...                                                 |.");
-				System.out.println("         |                                                                                                                        |.");
-				System.out.println("         |    =============================================================================================================       |.");
-				System.out.println("         |                                                                                                                        |.");
-
-				socket = server.accept(); //Aceptar conexiones entrantes
-
-
-				imprimir          ("         |                                                 Conexión establecida!                                                  |.");
-				System.out.println("         |                                                                                                                        |.");
-				System.out.println("         |    =============================================================================================================       |.");
-				System.out.println("         |                                                                                                                        |.");
-
-				do{
-					imprimir      ("         |                                               Ingrese una opción así:                                                  |.");
-					imprimir      ("         |                                               1. Buscar canción                                                        |.");
-					imprimir      ("         |                                               2. Reproducir canción                                                    |.");
-					imprimir      ("         |                                               3. Mostrar Letra                                                         |.");
-					imprimir      ("         |                                               4. Detener Canción                                                       |.");
-					imprimir      ("         |                                               5. Imprimir lista de Canciones                                           |.");
-					imprimir      ("         |                                               6. Salir                                                                 |.");
-
-					System.out.println("Servidor iniciado correctamente");
-
-
-					centinela = ConsoleInput.getInt();
-
-<<<<<<< HEAD
-=======
-					
->>>>>>> 1539ec280c1cdda42f34b654f45ad80e17134b0e
-					
-					if (centinela >= 1 && centinela <= 6){
-
-
-						salidaServidor = new DataOutputStream(socket.getOutputStream());
-						salidaServidor.writeUTF("Adios mundo");	
-
-
-						if(centinela == 1)
-						{
-							imprimir("                      Ingrese un numero del 1 al 15 para buscar una cancion, el numero de canciones actuales son: "+(info_canciones.length-1));
-							indice_cancion = ConsoleInput.getInt();
-		
-							inicio_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.INICIO_CANCION]);
-							fin_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.FIN_CANCION]);
-		
-							System.out.println();
-							imprimir("                                                           Nombre: "+info_canciones[indice_cancion][ConsoleData.NOMBRE_CANCION]);
-							imprimir("                                                              Autor: "+info_canciones[indice_cancion][ConsoleData.AUTOR_CANCION]);
-							imprimir(" ");
-						}	
-
-						if(centinela == 2)
-						{
-							audio.seleccionarCancion(info_canciones[1][ConsoleData.RUTA_CANCION]);
-							audio.reproducir();
-						}
-		
-						if(centinela == 3)
-						{
-							//TODO: Ojo, falta validar el valor ingresado
-							//TODO: Falta darle formato amigable de lectura al usuario 
-							imprimir("Ingrese indice de la cancion, entre 0 y "+(info_canciones.length-1));
-							indice_cancion = ConsoleInput.getInt();
-		
-							inicio_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.INICIO_CANCION]);
-							fin_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.FIN_CANCION]);
-							
-							letra_cancion = obtenerLetraCancion(inicio_letra,fin_letra,canciones);
-		
-							imprimir(letra_cancion.toString());
-						}
-		
-						if(centinela == 4)
-						{
-							audio.detener();
-						}
-		
-						if(centinela==5)
-						{
-							/* La informacion de las canciones esta
-							en la matriz info_canciones, acá un ejemplo de como imprimir
-							el nombre de la primer canción y su autor */
-							
-							//TODO: Ojo, falta validar el valor ingresado
-							imprimir("Ingrese indice de la cancion, entre 0 y "+(info_canciones.length-1));
-							indice_cancion = ConsoleInput.getInt();
-		
-							inicio_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.INICIO_CANCION]);
-							fin_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.FIN_CANCION]);
-		
-							System.out.println();
-							imprimir("Inicio letra "+inicio_letra);
-							imprimir("Fin letra "+fin_letra);
-							imprimir("Nombre "+info_canciones[indice_cancion][ConsoleData.NOMBRE_CANCION]);
-							imprimir("Autor "+info_canciones[indice_cancion][ConsoleData.AUTOR_CANCION]);
-							imprimir("Archivo "+info_canciones[indice_cancion][ConsoleData.RUTA_CANCION]);
-		
-							imprimir("Primera estrofa: "+canciones[inicio_letra]);
-							imprimir("Última estrofa: "+canciones[fin_letra]);
-							
-							//TODO:Explicar como funciona el archivo y como se analiza cada línea
-							//TODO:Imprimir la lista completa
-						}
-						if(centinela == 6){
-							imprimir("Finalizando...");
-							socket.close();
-						}
-
-					}
-					else{
-						System.out.println("Error, dato invalido");
-					}
-	
-				}while(centinela!=6);
-			}else if(seleccion == 2){
-
-
-				imprimir          ("         |                                               Iniciando Cliente...                                                    |.");
-
-
-				//Hace falta que el cliente reciba las instrucciones del servidor y las ejecute.
-				Socket cliente;
-    			int puerto = 9000;
-				BufferedReader entradaCliente, tecladoCliente;
-				PrintStream salidaCliente;
-				Scanner scanner = new Scanner(System.in);
-
-				imprimir("Ingrese la dirección IP del Director: ");
-				String ip = scanner.nextLine();
-
-				cliente = new Socket(ip,puerto);
-				System.out.println("Cliente vinculado correctamente");
-
-				/*[=================CLIENTE===================]*/
-
-				entradaCliente = new BufferedReader (new InputStreamReader(cliente.getInputStream()));
-
-				String msg = entradaCliente.readLine();
-            	System.out.println(msg);
-				
-
-
-				System.out.println("Aqui termina el cliente");
+				Cliente Cliente = new Cliente();
+				Cliente.main();
 
 			}else{
-				imprimir("Ha ingresado un valor inválido");
+				System.out.println("Por favor ingrese \"1\" para Director y \"2\" para Cliente");
 			}
-		}
-		catch(Exception e)
+
+
+		}catch(Exception e)
 		{
 			System.out.println(e);
 		}
