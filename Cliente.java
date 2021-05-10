@@ -35,8 +35,8 @@ public class Cliente {
                     System.out.println("El servidor escogio la opcion: " + mensaje);
 
 
-                    /*ejecucion ejecucion = new ejecucion();
-                    ejecucion.ejecutar(mensaje);*/
+                    ejecucion ejecucion = new ejecucion();
+                    ejecucion.ejecutar(mensaje);
                 } while (mensaje!=6);
     
                 

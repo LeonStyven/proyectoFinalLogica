@@ -19,18 +19,21 @@ public class servidor {
 
 
             //Llamada de funciones
-            Programa programa = new Programa();
+            //Programa programa = new Programa();
+
+            ejecucion ejecucion = new ejecucion();
+            ejecucion.ejecutar(centinela);
 
             System.out.println("         |                                                                                                                        |.");
             System.out.println("         |    =============================================================================================================       |.");
             System.out.println("         |                                                                                                                        |.");
             System.out.println("         |                                                                                                                        |.");
-            programa.imprimir          ("         |                   Como director, tú serás quien elija la canción que todos los usuarios escucharán                     |.");
+            ejecucion.imprimir          ("         |                   Como director, tú serás quien elija la canción que todos los usuarios escucharán                     |.");
             System.out.println("         |                                                                                                                        |.");
             System.out.println("         |                                                                                                                        |.");
             System.out.println("         |    =============================================================================================================       |.");
             System.out.println("         |                                                                                                                        |.");
-            programa.imprimir          ("         |                                               Iniciando Servidor...                                                    |.");
+            ejecucion.imprimir          ("         |                                               Iniciando Servidor...                                                    |.");
 
             //Iniciar Servidor
             servidor = new ServerSocket(PUERTO);
@@ -42,7 +45,7 @@ public class servidor {
             System.out.println("         |                                                                                                                        |.");
             System.out.println("         |    =============================================================================================================       |.");
             System.out.println("         |                                                                                                                        |.");
-            programa.imprimir          ("         |                                                  Esperando Conexión...                                                 |.");
+            ejecucion.imprimir          ("         |                                                  Esperando Conexión...                                                 |.");
             System.out.println("         |                                                                                                                        |.");
             System.out.println("         |    =============================================================================================================       |.");
             System.out.println("         |                                                                                                                        |.");
@@ -53,7 +56,7 @@ public class servidor {
             in = new DataInputStream(sc.getInputStream());
             out = new DataOutputStream(sc.getOutputStream());
 
-            programa.imprimir          ("         |                                                 Conexión establecida!                                                  |.");
+            ejecucion.imprimir          ("         |                                                 Conexión establecida!                                                  |.");
             System.out.println("         |                                                                                                                        |.");
             System.out.println("         |    =============================================================================================================       |.");
             System.out.println("         |                                                                                                                        |.");
@@ -71,8 +74,8 @@ public class servidor {
 
                     out.writeInt(centinela);
 
-                    /*ejecucion ejecucion = new ejecucion();
-                    ejecucion.ejecutar(centinela);*/
+                    //ejecucion ejecucion = new ejecucion();
+                    ejecucion.ejecutar(centinela);
 
                     if(centinela==6){
                         out.writeUTF("Cerrando Conexion");

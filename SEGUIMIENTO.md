@@ -114,3 +114,17 @@
 	2. No encontramos una forma de reemplazar los ";" cuando se muestra la letra de una cancion.
 	3. Separar las funcionalidades del programa requiere más trabajo del esperado.
 	4. Las funciones principales parecen tener problemas de vinculación.
+
+
+# Monday, May 10
+## ¿Que hemos hecho?
+
+	1. Se solucionó el problema de vinculación de las funciones principales
+	
+## ¿Que vamos a hacer?
+
+	1. 
+
+## ¿Que dificultades hemos tenido?
+
+	1. 
