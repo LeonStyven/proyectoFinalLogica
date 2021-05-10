@@ -26,9 +26,23 @@ public class Cliente {
                 int mensaje;
 
                 System.out.println("Conexion con el servidor Exitosa!");
+
+                menu menu = new menu();
+                menu.imprimirmenu();
+
+                do {
+                    mensaje = in.readInt();
+                    System.out.println("El servidor escogio la opcion: " + mensaje);
+
+
+                    /*ejecucion ejecucion = new ejecucion();
+                    ejecucion.ejecutar(mensaje);*/
+                } while (mensaje!=6);
     
-                mensaje = in.readInt();
-                System.out.println("El servidor escogio la opcion: " + mensaje);
+                
+
+                
+
         } catch (Exception e) {
             System.out.println(e);
         }

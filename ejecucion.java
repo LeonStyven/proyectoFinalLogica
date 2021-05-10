@@ -3,9 +3,8 @@ public class ejecucion {
 
         //Llamado de las demas funciones de "Programa.java"
         Programa programa = new Programa();
-
-        AnsiConsole.systemInstall();
 		
+
 		Audio audio = new Audio();
 		int indice_cancion = 0;
 		int inicio_letra = 0, fin_letra = 0;
@@ -46,7 +45,7 @@ public class ejecucion {
             inicio_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.INICIO_CANCION]);
             fin_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.FIN_CANCION]);
             
-            letra_cancion = obtenerLetraCancion(inicio_letra,fin_letra,canciones);
+            letra_cancion = programa.obtenerLetraCancion(inicio_letra,fin_letra,canciones);
 
             programa.imprimir(letra_cancion.toString());
         }
@@ -80,7 +79,6 @@ public class ejecucion {
         }
         if(centinela == 6){
             programa.imprimir("Finalizando...");
-            socket.close();
         }
     }
 }

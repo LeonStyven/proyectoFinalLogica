@@ -71,6 +71,9 @@ public class servidor {
 
                     out.writeInt(centinela);
 
+                    /*ejecucion ejecucion = new ejecucion();
+                    ejecucion.ejecutar(centinela);*/
+
                     if(centinela==6){
                         out.writeUTF("Cerrando Conexion");
                         sc.close();
