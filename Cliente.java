@@ -34,6 +34,7 @@ public class Cliente {
 
                     centinela = in.readInt();
                     System.out.println("El servidor escogio la opcion: " + centinela);
+                    
                     subOpcion = in.readInt();
                     System.out.println("Subopcion: " + subOpcion);
 

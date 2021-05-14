@@ -33,7 +33,7 @@ public class servidor {
             System.out.println("         |                                                                                                                        |.");
             System.out.println("         |    =============================================================================================================       |.");
             System.out.println("         |                                                                                                                        |.");
-            ejecucion.imprimir          ("         |                                               Iniciando Servidor...                                                    |.");
+            ejecucion.imprimir("         |                                               Iniciando Servidor...                                                    |.");
 
             //Iniciar Servidor
             servidor = new ServerSocket(PUERTO);
@@ -45,7 +45,7 @@ public class servidor {
             System.out.println("         |                                                                                                                        |.");
             System.out.println("         |    =============================================================================================================       |.");
             System.out.println("         |                                                                                                                        |.");
-            ejecucion.imprimir          ("         |                                                  Esperando Conexión...                                                 |.");
+            ejecucion.imprimir("         |                                                  Esperando Conexión...                                                 |.");
             System.out.println("         |                                                                                                                        |.");
             System.out.println("         |    =============================================================================================================       |.");
             System.out.println("         |                                                                                                                        |.");
@@ -56,7 +56,7 @@ public class servidor {
             in = new DataInputStream(sc.getInputStream());
             out = new DataOutputStream(sc.getOutputStream());
 
-            ejecucion.imprimir          ("         |                                                 Conexión establecida!                                                  |.");
+            ejecucion.imprimir("         |                                                 Conexión establecida!                                                  |.");
             System.out.println("         |                                                                                                                        |.");
             System.out.println("         |    =============================================================================================================       |.");
             System.out.println("         |                                                                                                                        |.");
@@ -69,6 +69,7 @@ public class servidor {
 
                 //Solicitud del centinela
                 centinela = ConsoleInput.getInt();
+                
                 System.out.println("Ingrese subopcion");
                 subOpcion = ConsoleInput.getInt();
                 

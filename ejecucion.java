@@ -1,6 +1,9 @@
 import org.fusesource.jansi.AnsiConsole;
 import static org.fusesource.jansi.Ansi.*;
 import static org.fusesource.jansi.Ansi.Color.*;
+import java.util.*;
+
+import java.util.StringTokenizer;
 
 public class ejecucion {
     
@@ -123,18 +126,51 @@ public class ejecucion {
 
     public static StringBuilder obtenerLetraCancion(int inicio,int fin, String[]data)
 	{
-		StringBuilder str = new StringBuilder();
+    
+        StringBuilder str = new StringBuilder();
+        StringTokenizer temp;
 
-		for(int i = inicio; i<=fin; i++)
+        try {
+            
+
+            for(int i = inicio; i<=fin; i++)
 		{
-			str.append(data[i]+"\n");		
+            //System.out.println("@" + data[i]);
+
+            String caracterNuevaLinea = new String("--");
+            String caracterEspacio = new String(";");
+
+            if(data[i].contains(caracterNuevaLinea)){
+
+                temp = new StringTokenizer(data[i], caracterNuevaLinea);
+
+                while(temp.hasMoreTokens()){
+                    System.out.print(temp.nextToken()+" ");
+                }
+                System.out.println();
+                Thread.sleep(500);
+                
+            }else if(data[i].contains(caracterEspacio)){
+
+                temp = new StringTokenizer(data[i], caracterEspacio);
+
+                while(temp.hasMoreTokens()){
+                    System.out.print(temp.nextToken()+" ");
+                }
+                System.out.println();
+                Thread.sleep(500);
+			    //str.append(data[i]+"\n");
+            }
+
+
+            		
 		}
-		/*for (int j = 0; j <= str.length()-1; j ++){
-			if(str(j).equals("\u003B")){
-				str.replace("\u003B", "\u0020");
-			}			
-		}*/
-		return str;
+    
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        return str;
 
 	}
 
@@ -187,7 +223,7 @@ public class ejecucion {
             
             letra_cancion = obtenerLetraCancion(inicio_letra,fin_letra,canciones);
 
-            imprimir(letra_cancion.toString());
+            //imprimir(letra_cancion.toString());
         }
         if(centinela == 4){
 

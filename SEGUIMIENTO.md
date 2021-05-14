@@ -120,11 +120,16 @@
 ## ¿Que hemos hecho?
 
 	1. Se solucionó el problema de vinculación de las funciones principales
+
+# Thursday, May 13
+## ¿Que hemos hecho?
+
+	1. Ahora el programa es capaz de imprimir la letra sin los caracteres de espacio, ";" y sin los caracteres de salto de linea, "--"
 	
 ## ¿Que vamos a hacer?
 
-	1. 
+	1. El programa debe quitar los caracteres de salto de parrafo, ";;;;;;;;;;;;;;;;;"
 
 ## ¿Que dificultades hemos tenido?
 
-	1. 
+	1. Comportamiento inesperado a la hora  de retirar los caracteres: ";" de la cadena antes de imprimirse
