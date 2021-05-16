@@ -209,8 +209,10 @@ public class ejecucion {
 			imprimir(" ");
 		}
         if(centinela == 2){
-            audio.seleccionarCancion(info_canciones[1][ConsoleData.RUTA_CANCION]);
-            audio.reproducir();
+            imprimir("Ingrese indice de la cancion, entre 0 y "+(info_canciones.length-1));
+            indice_cancion = subOpcion;
+            audio.seleccionarCancion(info_canciones[indice_cancion][ConsoleData.RUTA_CANCION]);
+			audio.reproducir();
         }
         if(centinela == 3){
             //TODO: Ojo, falta validar el valor ingresado

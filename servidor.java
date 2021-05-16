@@ -76,6 +76,8 @@ public class servidor {
 
                 if(centinela >= 1 && centinela <= 6){
 
+                    //if(subOpcion>=0 && subOpcion)
+
                     out.writeInt(centinela);
                     out.writeInt(subOpcion);
 

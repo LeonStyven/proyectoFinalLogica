@@ -133,3 +133,18 @@
 ## ¿Que dificultades hemos tenido?
 
 	1. Comportamiento inesperado a la hora  de retirar los caracteres: ";" de la cadena antes de imprimirse
+
+# Saturday, May 15
+## ¿Que hemos hecho?
+
+	1. Se implemento la seleccion de canciones a la hora de reproducir"
+	
+## ¿Que vamos a hacer?
+
+	1. Hay que solucionar la impresión de salto de parrafo a la hora de imprimir la letra
+	2. El programa aun no es capaz de detener las canciones
+	3. Hace falta terminar la interfaz grafica de la aplicacion
+
+//## ¿Que dificultades hemos tenido?
+
+	//1. Comportamiento inesperado a la hora  de retirar los caracteres: ";" de la cadena antes de imprimirse
