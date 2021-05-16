@@ -257,7 +257,12 @@ public class ejecucion {
             //TODO:Imprimir la lista completa
         }
         if(centinela == 6){
-            imprimir("Finalizando...");
+            System.out.println("         |               .        .             .              .                .         .                   .                   .   |.");
+            System.out.println("         |     . .       .         .           .        Cerrando Conexión...             .         .   .      .          .         .  |.");
+            System.out.println("         |               .                     .            .                  .         .                          .             .   |.");
+
+            inicio inicio = new inicio();
+            inicio.despedida();
         }
     }
 }

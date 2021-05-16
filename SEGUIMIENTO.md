@@ -145,6 +145,6 @@
 	2. El programa aun no es capaz de detener las canciones
 	3. Hace falta terminar la interfaz grafica de la aplicacion
 
-//## ¿Que dificultades hemos tenido?
+## ¿Que dificultades hemos tenido?
 
-	//1. Comportamiento inesperado a la hora  de retirar los caracteres: ";" de la cadena antes de imprimirse
+	1. Comportamiento inesperado a la hora  de retirar los caracteres: ";" de la cadena antes de imprimirse

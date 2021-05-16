@@ -46,8 +46,8 @@ public class Programa{
 			ejecucion.displayVacio(50, 50);
 
 
-			inicio i = new inicio();
-			i.saludo();
+			inicio inicio = new inicio();
+			inicio.saludo();
 
 			tipoUsuario us = new tipoUsuario();
 			tipoUsuario = us.introduccion();
@@ -63,7 +63,10 @@ public class Programa{
 				Cliente.main();
 
 			}else{
-				System.out.println("Por favor ingrese \"1\" para Director y \"2\" para Cliente");
+				System.out.println("         |               .                     .                              .         .                                      .   |.");
+				System.out.println("         |      .      	.			Por favor ingrese \"1\" para Director y \"2\" para Cliente        .		..		.	.		.  |.");
+				System.out.println("         |               .                     .                              .         .                                      .   |.");
+
 			}
 
 
