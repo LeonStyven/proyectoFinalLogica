@@ -159,3 +159,14 @@
 	1. Hay que solucionar la impresión de salto de parrafo a la hora de imprimir la letra debido a que solo detecta y remueve los caracteres -- en el salto de linea
 	2. El programa aun no es capaz de detener las canciones
 	3. Hace falta terminar la interfaz grafica de la aplicacion
+
+# Monday, May 17
+## ¿Que hemos hecho?
+
+	1. Se soluciono la impresion de los saltos de parrafo
+	
+## ¿Que vamos a hacer?
+
+	
+	1. El programa aun no es capaz de detener las canciones
+	2. Hace falta terminar la interfaz grafica de la aplicacion

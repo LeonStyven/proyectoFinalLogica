@@ -137,8 +137,9 @@ public class ejecucion {
 		{
             //System.out.println("@" + data[i]);
 
-            String caracterNuevaLinea = new String("--");
+            String caracterNuevaLinea = new String("-;");
             String caracterEspacio = new String(";");
+            String caracterAntiguo = new String("#");
 
             if(data[i].contains(caracterNuevaLinea)){
 
@@ -167,6 +168,13 @@ public class ejecucion {
                 System.out.println();
                 Thread.sleep(500);
 			    //str.append(data[i]+"\n");
+
+            }else if(data[i].contains(caracterAntiguo)){
+
+
+                System.out.println(data);
+                System.out.print("<-- Hmmmmm, esto no deberia estar aqui, parece que alguien no hizo bien su trabajo");
+                Thread.sleep(500);
             }
 
 
