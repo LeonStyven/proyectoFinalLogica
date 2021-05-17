@@ -148,3 +148,14 @@
 ## ¿Que dificultades hemos tenido?
 
 	1. Comportamiento inesperado a la hora  de retirar los caracteres: ";" de la cadena antes de imprimirse
+
+# Sunday, May 16
+## ¿Que hemos hecho?
+
+	1. Se mejoró mucho la interfaz gráfica de la aplicacion
+	
+## ¿Que vamos a hacer?
+
+	1. Hay que solucionar la impresión de salto de parrafo a la hora de imprimir la letra debido a que solo detecta y remueve los caracteres -- en el salto de linea
+	2. El programa aun no es capaz de detener las canciones
+	3. Hace falta terminar la interfaz grafica de la aplicacion

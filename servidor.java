@@ -69,6 +69,8 @@ public class servidor {
 
             do {
 
+                inicio inicio = new inicio();
+
                 menu menu = new menu();
                 menu.imprimirmenu();
 
@@ -91,29 +93,9 @@ public class servidor {
                         subOpcion = ConsoleInput.getInt();
                     }
 
-                    /*switch(centinela){
 
-                        case 1: System.out.println("Ingrese subopcion");
-                                subOpcion = ConsoleInput.getInt();
-                        break;
-                        case 2: System.out.println("Ingrese subopcion");
-                                subOpcion = ConsoleInput.getInt();
-                        break;
-                        case 3: System.out.println("Ingrese subopcion");
-                                subOpcion = ConsoleInput.getInt();
-                        break;
-                        case 4: System.out.println("No hace falta ingresar una subopcion.");
-                        break;
-                        case 5: System.out.println("Ingrese subopcion");
-                                subOpcion = ConsoleInput.getInt();
-                        break;
-                        case 6: System.out.println("No hace falta ingresar una subopcion.");
-                        break;
-                        
-                    }*/
-
-                    out.writeInt(centinela);
-                    out.writeInt(subOpcion);
+                    out.writeInt(centinela);//Envio del centinela
+                    out.writeInt(subOpcion);//envio de la subopcion
 
                     //ejecucion ejecucion = new ejecucion();
                     ejecucion.ejecutar(centinela, subOpcion);
@@ -123,14 +105,13 @@ public class servidor {
                         System.out.println("         |     . .       .         .           .        Cerrando Conexión...             .         .   .      .          .         .  |.");
                         System.out.println("         |               .                     .            .                  .         .                          .             .   |.");
                         sc.close();
+                        inicio.despedida();
+
                     }
                 }else{
                     System.out.println("         |               .        .             .              .                .         .                   .                   .   |.");
                     System.out.println("         |     . .   .      .     . .  .           .       Error, dato inválido         .         .   .       .          .         .  |.");
                     System.out.println("         |               .                     .            .                  .         .                          .             .   |.");
-
-                    inicio inicio = new inicio();
-                    inicio.despedida();
                 }
 
             } while (centinela!=6);

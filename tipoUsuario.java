@@ -64,7 +64,7 @@ public class tipoUsuario {
         InetAddress address = InetAddress.getLocalHost();
         System.out.println("         |               .                     .           .                   .         .                                    .   |.");
         System.out.println("         |            .          .  ..  .             .                .               .    .   .   .                 .   .       |.");
-        System.out.println("         |               .            .           .     IP Local : "+address.getHostAddress()+"      .     .  .       .   ..       .      .       |.");
+        System.out.println("         |               .            .           .    .   IP Local : "+address.getHostAddress()+"      .     .  .       .   ..           .       |.");
 
     }
 

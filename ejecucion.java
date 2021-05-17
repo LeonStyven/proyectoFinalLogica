@@ -147,6 +147,13 @@ public class ejecucion {
                 while(temp.hasMoreTokens()){
                     System.out.print(temp.nextToken()+" ");
                 }
+
+                /*temp2 = new StringTokenizer(temp, caracterEspacio);
+
+                while(temp2.hasMoreTokens()){
+                    System.out.println(temp2.nextToken()+" ");
+                }*/
+
                 System.out.println();
                 Thread.sleep(500);
                 

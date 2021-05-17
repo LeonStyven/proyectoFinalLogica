@@ -17,15 +17,18 @@ public class Audio extends Thread{
 		sonido = ruta_cancion;
 	}
 
-	public void empezar()
-	{
+	ejecucion ejecucion = new ejecucion();//Necesario para la impresion de caracteres especiales
+
+	public void empezar(){
 		if(!esta_reproduciendose)
 		{
 			try {
 	        	sequencer = MidiSystem.getSequencer(); // Get the default Sequencer
 
 	            if (sequencer==null) {
-	                System.err.println("Sequencer device not supported");
+					System.out.println("         |               .        .             .              .                .         .                   .                   .   |.");
+                    System.out.println("         |     .       .   .      .     .      .       Sequencer device not supported.         .         .   ..          .         .  |.");
+                    System.out.println("         |               .                     .            .                  .         .                          .             .   |.");
 	                return;
 	            } 
 	            sequencer.open(); // Open device
@@ -37,13 +40,19 @@ public class Audio extends Thread{
 
 	        } catch (MidiUnavailableException | InvalidMidiDataException | IOException ex) {
 	            //ex.printStackTrace();
-	            System.out.println("Error al reproducir el archivo, revise la ruta y vuelva a intentarlo.");
+				System.out.println("         |               .        .             .              .                .         .                   .                   .   |.");
+                System.out.println("         |     . .   .       .    .       Error al reproducir el archivo, revise la ruta y vuelva a intentarlo.       . .          .  |.");
+                System.out.println("         |               .                     .            .                  .         .                          .             .   |.");
+	            System.out.println("");
 	            esta_reproduciendose = true;
 	        }
 		}
 		else{
-			System.out.println("Hay un archivo actualmente en reproducci\u00f3n");
-			System.out.println("Detenga la canci\u00f3n y seleccione una nueva");
+
+			System.out.println("         |               .        .             .              .                .         .                    .                   .   |.");
+            ejecucion.imprimir("         |     . .         .     .       .    .       Hay un archivo actualmente en reproducción            .      .     .          .  |.");
+			ejecucion.imprimir("         |     . .         .     .       .    .       Detenga la canción y seleccione una nueva            .       .     .          .  |.");
+			System.out.println("         |               .                     .            .                   .         .                          .             .   |.");
 		}
 	}
 
@@ -65,21 +74,19 @@ public class Audio extends Thread{
 		{
 			this.start();
 		}
-		//System.out.println(this.getState());
 	}
 
 	public void run(){
 
 		while(esta_reproduciendose){
-			//System.out.println(esta_reproduciendose);
 			if(sequencer != null)
 			{
 				if(!sequencer.isRunning())
 				{
-					System.out.println("Se detuvo la canci\u0073n");
+					System.out.println("         |               .        .             .              .                .         .                   .                   .   |.");
+                	ejecucion.imprimir("         |     .          .      .   .       .    .       Se detuvo la canción       . .        .            .          ..         .  |.");
+                	System.out.println("         |               .                     .            .                  .         .                          .             .   |.");
 					detener();
-					//System.out.print(sequencer.getTickPosition()+"/"+sequencer.getTickLength());
-					//System.out.print("\r");
 				}
 			}
 		}
