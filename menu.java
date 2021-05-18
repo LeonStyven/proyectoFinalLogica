@@ -3,7 +3,7 @@ public class menu {
 
         
         //Programa programa = new Programa();
-		ejecucion ejecucion = new ejecucion();
+		Ejecucion ejecucion = new Ejecucion();
 		
 
         ejecucion.imprimir      ("         |                                               Ingrese una opción así:                                                  |.");

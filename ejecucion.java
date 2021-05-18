@@ -5,7 +5,7 @@ import java.util.*;
 
 import java.util.StringTokenizer;
 
-public class ejecucion {
+public class Ejecucion {
     
 
         public static void displayVacio(int n,int m){
@@ -174,14 +174,14 @@ public class ejecucion {
 
 	}
 
-    public static void ejecutar(int centinela, int subOpcion){
+    public static void ejecutar(int centinela, int subOpcion, Audio audio){
 
         //Llamado de las demas funciones de "java"
         Programa programa = new Programa();
         
         AnsiConsole.systemInstall();
 
-		Audio audio = new Audio();
+		
 		int indice_cancion = 0;
 		int inicio_letra = 0, fin_letra = 0;
 		int seleccion = 0;
@@ -228,8 +228,8 @@ public class ejecucion {
             //imprimir(letra_cancion.toString());
         }
         if(centinela == 4){
-
-			audio.detener();
+           	
+			audio.detener();			
 		}
         if(centinela==5){
             /* La informacion de las canciones esta

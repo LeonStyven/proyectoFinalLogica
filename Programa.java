@@ -40,7 +40,7 @@ public class Programa{
 			borrarDisplay(4);
 			imprimirDisplay(4,16);*/
 
-			ejecucion ejecucion = new ejecucion();
+			Ejecucion ejecucion = new Ejecucion();
 
 
 			ejecucion.displayVacio(50, 50);
@@ -54,13 +54,13 @@ public class Programa{
 
 			if(tipoUsuario==1){
 
-				servidor servidor = new servidor();
+				Servidor servidor = new Servidor();
 				servidor.main();
 
 			}else if(tipoUsuario==2){
 
-				Cliente Cliente = new Cliente();
-				Cliente.main();
+				Cliente cliente = new Cliente();
+				cliente.main();
 
 			}else{
 				System.out.println("Por favor ingrese \"1\" para Director y \"2\" para Cliente");
@@ -71,8 +71,10 @@ public class Programa{
 		{
 			System.out.println(e);
 		}
+		
+		
 		finally{
 			audio.detener();
-		}
+		}	
 	}
 }

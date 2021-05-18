@@ -21,6 +21,7 @@ public class Audio extends Thread{
 	{
 		if(!esta_reproduciendose)
 		{
+			
 			try {
 	        	sequencer = MidiSystem.getSequencer(); // Get the default Sequencer
 
@@ -33,12 +34,13 @@ public class Audio extends Thread{
 	            Sequence sequence = MidiSystem.getSequence(new File(sonido));
 	            sequencer.setSequence(sequence); // load it into sequencer
 	            sequencer.start();  // start the playback
+	            System.out.println(sequencer);
 	            esta_reproduciendose = true;
-
+	            
 	        } catch (MidiUnavailableException | InvalidMidiDataException | IOException ex) {
 	            //ex.printStackTrace();
 	            System.out.println("Error al reproducir el archivo, revise la ruta y vuelva a intentarlo.");
-	            esta_reproduciendose = true;
+	            esta_reproduciendose = false;
 	        }
 		}
 		else{
@@ -47,14 +49,11 @@ public class Audio extends Thread{
 		}
 	}
 
-	public void detener(){
-		if(sequencer!=null)
+	public void detener(){	
+		if ((sequencer != null) && sequencer.isOpen())
     	{
-        	if(sequencer.isOpen())
-        	{
-        		sequencer.stop();
-        		sequencer.close();
-        	}
+    		sequencer.stop();
+    		sequencer.close();
     	}
     	esta_reproduciendose = false;
 	}

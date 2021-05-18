@@ -3,13 +3,14 @@ import java.net.Socket;
 import java.io.*;
 
 
-public class servidor {
+public class Servidor {
 
     public static void main(){
 
         try {
             //Variable para el manejo del menu
             int centinela = 0, subOpcion = 0;	
+            Audio audio = new Audio();
 
             ServerSocket servidor;
             Socket sc;
@@ -21,8 +22,8 @@ public class servidor {
             //Llamada de funciones
             //Programa programa = new Programa();
 
-            ejecucion ejecucion = new ejecucion();
-            ejecucion.ejecutar(centinela, subOpcion);
+            Ejecucion ejecucion = new Ejecucion();
+            ejecucion.ejecutar(centinela, subOpcion, audio);
 
             System.out.println("         |                                                                                                                        |.");
             System.out.println("         |    =============================================================================================================       |.");
@@ -82,7 +83,7 @@ public class servidor {
                     out.writeInt(subOpcion);
 
                     //ejecucion ejecucion = new ejecucion();
-                    ejecucion.ejecutar(centinela, subOpcion);
+                    ejecucion.ejecutar(centinela, subOpcion, audio);
 
                     if(centinela==6){
                         out.writeUTF("Cerrando Conexion");

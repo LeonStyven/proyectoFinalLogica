@@ -9,6 +9,7 @@ public class Cliente {
         try {
 
             System.out.println("Entraste como cliente");
+                Audio audio = new Audio();
                 //Ingreso por teclado
                 Scanner teclado = new Scanner(System.in);
 
@@ -39,8 +40,8 @@ public class Cliente {
                     System.out.println("Subopcion: " + subOpcion);
 
 
-                    ejecucion ejecucion = new ejecucion();
-                    ejecucion.ejecutar(centinela, subOpcion);
+                    Ejecucion ejecucion = new Ejecucion();
+                    ejecucion.ejecutar(centinela, subOpcion, audio);
 
                 } while (centinela!=6);
     
