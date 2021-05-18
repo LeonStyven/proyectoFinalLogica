@@ -13,7 +13,7 @@ public class Cliente {
             System.out.println("         |               .        .             .              .                .         .                   .                   .   |.");
             System.out.println("         |     . . .           .        .       .    .       Entraste como cliente       . .      .          ..           .        .  |.");
             System.out.println("         |               .                     .            .                  .         .                          .             .   |.");
-            
+            Audio audio = new Audio();
             //Ingreso por teclado
             Scanner teclado = new Scanner(System.in);
 
@@ -61,7 +61,7 @@ public class Cliente {
                 System.out.println("         |            .            .        .       .                   .             .       .           ..                      .   |.");
                 
 
-                ejecucion.ejecutar(centinela, subOpcion);
+                ejecucion.ejecutar(centinela, subOpcion, audio);
 
             } while (centinela!=6);
     
