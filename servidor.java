@@ -11,7 +11,8 @@ public class servidor {
             //Variable para el manejo del menu
             int centinela = 0;
             int subOpcion = 0;	
-
+            Audio audio = new Audio();
+            
             ServerSocket servidor;
             Socket sc;
             DataInputStream in;
@@ -23,7 +24,7 @@ public class servidor {
             //Programa programa = new Programa();
 
             ejecucion ejecucion = new ejecucion();
-            ejecucion.ejecutar(centinela, subOpcion);
+            ejecucion.ejecutar(centinela, subOpcion, audio);
 
             System.out.println("         |               .                     .                              .         .                                     .   |.");
             System.out.println("         |        .                 .                  .        ..                    .              .                            |.");
@@ -98,7 +99,7 @@ public class servidor {
                     out.writeInt(subOpcion);//envio de la subopcion
 
                     //ejecucion ejecucion = new ejecucion();
-                    ejecucion.ejecutar(centinela, subOpcion);
+                    ejecucion.ejecutar(centinela, subOpcion, audio);
 
                     if(centinela==6){
                         System.out.println("         |               .        .             .              .                .         .                   .                   .   |.");
