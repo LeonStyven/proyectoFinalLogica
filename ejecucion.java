@@ -149,24 +149,21 @@ public class ejecucion {
                     System.out.print(temp.nextToken()+" ");
                 }
 
-                /*temp2 = new StringTokenizer(temp, caracterEspacio);
-
-                while(temp2.hasMoreTokens()){
-                    System.out.println(temp2.nextToken()+" ");
-                }*/
-
-                System.out.println();
-                Thread.sleep(500);
+                System.out.println(".         .                   .        ..          .    .          .       .              ..          .   .     .    . ");
+                Thread.sleep(1000);
                 
             }else if(data[i].contains(caracterEspacio)){
 
                 temp = new StringTokenizer(data[i], caracterEspacio);
 
-                while(temp.hasMoreTokens()){
-                    System.out.print(temp.nextToken()+" ");
-                }
-                System.out.println();
-                Thread.sleep(500);
+                    System.out.print(".       .         .    ..       . .        .     .  ");
+                
+                    while(temp.hasMoreTokens()){
+                        System.out.print(temp.nextToken()+" ");
+                    }
+                
+                System.out.println(".      .        ..           .        .         .     .");
+                Thread.sleep(1000);
 			    //str.append(data[i]+"\n");
 
             }else if(data[i].contains(caracterAntiguo)){
