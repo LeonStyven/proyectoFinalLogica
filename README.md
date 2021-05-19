@@ -20,6 +20,10 @@ La segunda es como oyente, en donde solo tendrás que dejar que el ritmo del dir
 
 Actualmente la aplicación se encuentra en desarrollo, y cada vez con más pequeños secretos.
 
+##Video Guía
+[![Funcionamiento del programa](https://www.youtube.com/watch?v=R8MweJQZMr8&ab_channel=MaryPoppinsM7)
+
+
 
 ## Miembros
 * Julian Styven Colorado Agudelo
