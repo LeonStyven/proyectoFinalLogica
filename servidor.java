@@ -26,17 +26,19 @@ public class servidor {
             ejecucion ejecucion = new ejecucion();
             ejecucion.ejecutar(centinela, subOpcion, audio);
 
-            System.out.println("         |               .                     .                              .         .                                     .   |.");
-            System.out.println("         |        .                 .                  .        ..                    .              .                            |.");
-            System.out.println("         |    =============================================================================================================       |.");
-            System.out.println("         |                 .         .               .       .                .                         .          .      .       |.");
-            System.out.println("         |         .                         .           .             .                 .                                        |.");
-            ejecucion.imprimir("         |                   Como director, tú serás quien elija la canción que todos los usuarios escucharán    .        .       |.");
-            System.out.println("         |        .         .                                                                                    .                |.");
-            System.out.println("         |                       .          .     .         .                     .              .                       .        |.");
-            System.out.println("         |    =============================================================================================================       |.");
-            System.out.println("         |       .          .            .             .                     .                 .         .           .            |.");
-            ejecucion.imprimir("         |      .          .          .           .          Iniciando Servidor...      .        .              .          .      |.");
+            System.out.println("         |               .                     .                               .         .                                     .   |.");
+            System.out.println("         |        .                 .                  .        . .                    .              .                            |.");
+            System.out.println("         |    ==============================================================================================================       |.");
+            System.out.println("         |                 .         .                .       .                .                         .          .      .       |.");
+            System.out.println("         |         .                          .           .             .                 .                                        |.");
+            ejecucion.imprimir("         |                    Como director, tú serás quien elija la canción que todos los usuarios escucharán    .        .       |.");
+            System.out.println("         |        .         .                                                                                     .                |.");
+            System.out.println("         |                       .           .     .         .                     .              .                       .        |.");
+            System.out.println("         |    ==============================================================================================================       |.");
+            System.out.println("         |       .          .             .             .                     .                 .         .           .            |.");
+            ejecucion.imprimir("         |      .          .           .           .          Iniciando Servidor...      .        .              .          .      |.");
+            System.out.println("         |               .              .        .             .             .    .         .              .                   .   |.");
+
 
             //Iniciar Servidor
             servidor = new ServerSocket(PUERTO);
@@ -45,36 +47,34 @@ public class servidor {
             tipoUsuario us = new tipoUsuario();
             us.direccionIP();
 
-            System.out.println("         |               .              .       .             .             .    .         .              .                   .   |.");
-            System.out.println("         |      .                    .            .               .                  .               .         .            .     |.");
-            System.out.println("         |    =============================================================================================================       |.");
-            System.out.println("         |      .      .         .          .      .            .      .      .             .       .     .             .         |.");
-            ejecucion.imprimir("         |              .       .      .      .         .    Esperando Conexión...             .    .          .             .    |.");
-            System.out.println("         |         .              .        .       .         .                 .       .           .                .             |.");
-            System.out.println("         |    =============================================================================================================       |.");
-            System.out.println("         |      .               .                      .                     .               .           ..                   .   |.");
-            System.out.println("         |               .                     .                              .         .                                      .   |.");
-
+            System.out.println("         |      .                    .             .               .                  .               .         .            .     |.");
+            System.out.println("         |    ==============================================================================================================       |.");
+            System.out.println("         |      .      .         .          .       .            .      .      .             .       .     .             .         |.");
+            ejecucion.imprimir("         |              .       .      .      .          .    Esperando Conexión...             .    .          .             .    |.");
+            System.out.println("         |         .              .        .       .          .                 .       .           .                .             |.");
+            System.out.println("         |    ==============================================================================================================       |.");
             sc = servidor.accept();
 
             //Variables para la comunicacion del servidor con el cliente
             in = new DataInputStream(sc.getInputStream());
             out = new DataOutputStream(sc.getOutputStream());
 
-            System.out.println("         |               .          .  .         .               .               .         .                .         .       .   |.");
-            ejecucion.imprimir("         |      .                          .           .   Conexión establecida!        .            .                .           |.");
-            System.out.println("         |      .             .          .        .             .             .      .                                .    .      |.");
-            System.out.println("         |    =============================================================================================================       |.");
-            System.out.println("         |                                                                                                                        |.");
+            System.out.println("         |               .          .   .         .               .               .         .                .         .       .   |.");
+            ejecucion.imprimir("         |      .                          .            .   Conexión establecida!        .            .                .           |.");
+            System.out.println("         |      .             .          .         .             .             .      .                                .    .      |.");
+            System.out.println("         |    ==============================================================================================================       |.");
+            System.out.println("         |      .     .           .    .            .          .           .         .                      .           .     .    |.");
 
 
             do {
 
                 inicio inicio = new inicio();
 
+
                 menu menu = new menu();
                 menu.imprimirmenu();
 
+                System.out.print("         |    .      .  .        .          .             . .     > ");
                 //Solicitud del centinela
                 centinela = ConsoleInput.getInt();
 
@@ -82,16 +82,23 @@ public class servidor {
                 if(centinela >= 1 && centinela <= 6){
 
                     if(centinela==4 || centinela == 6){
-                        System.out.println("         |               .        .             .              .                .         .                   .                   .   |.");
-                        System.out.println("         |     . .   .      .     .      .       No hace falta ingresar una subopcion.         .         .   ..          .         .  |.");
-                        System.out.println("         |               .                     .            .                  .         .                          .             .   |.");
+                        System.out.println("         |               .        .             .              .                .         .                .                   .   |.");
+                        System.out.println("         |     . .   .      .     .      .       No hace falta ingresar una subopcion.         .      .   ..          .         .  |.");
+                        System.out.println("         |               .                     .            .                  .         .                       .             .   |.");
 
-                    }else{
+                    }else{  
 
-                        System.out.println("         |               .        .             .              .                .         .                   .                   .   |.");
-                        System.out.println("         |     . .   .      .     .      .         .   ingresar una subopcion.         .         .   ..                  .         .  |.");
-                        System.out.println("         |               .                     .            .                  .         .                          .             .   |.");
+                        System.out.println("         |    ==============================================================================================================       |.");
+                        System.out.println("         |               .        .             .              .                .         .                .                   .   |.");
+                        System.out.println("         |     . .   .      .     .      .         .   ingrese una Subopcion           .          ..                  .         .  |.");
+                        System.out.println("         |     . .   .      .     .      .      La sub-opcion es el indice de la cancion           .     .            .         .  |.");
+                        System.out.println("         |     . .   .      .     .      .           Debe ser un número entero           .     .            .      .            .  |.");
+                        System.out.println("         |               .                     .            .                  .         .                       .             .   |.");
+                        System.out.print("         |    .      .  .        .          .             . .    > ");
                         subOpcion = ConsoleInput.getInt();
+                        System.out.println("         |               .        .             .              .                .         .                .                   .   |.");
+                        System.out.println("         |    ==============================================================================================================       |.");
+
                     }
 
 
@@ -102,17 +109,17 @@ public class servidor {
                     ejecucion.ejecutar(centinela, subOpcion, audio);
 
                     if(centinela==6){
-                        System.out.println("         |               .        .             .              .                .         .                   .                   .   |.");
-                        System.out.println("         |     . .       .         .           .        Cerrando Conexión...             .         .   .      .          .         .  |.");
-                        System.out.println("         |               .                     .            .                  .         .                          .             .   |.");
+                        System.out.println("         |               .        .             .              .                .      .                   .                   .   |.");
+                        System.out.println("         |     . .       .         .           .        Cerrando Conexión...             .      .   .      .          .         .  |.");
+                        System.out.println("         |               .                     .            .                  .         .                       .             .   |.");
                         sc.close();
                         inicio.despedida();
 
                     }
                 }else{
-                    System.out.println("         |               .        .             .              .                .         .                   .                   .   |.");
-                    System.out.println("         |     . .   .      .     . .  .           .       Error, dato inválido         .         .   .       .          .         .  |.");
-                    System.out.println("         |               .                     .            .                  .         .                          .             .   |.");
+                    System.out.println("         |               .        .             .              .                .         .                .                   .   |.");
+                    System.out.println("         |     . .   .      .     . .  .           .       Error, dato inválido         .      .   .       .          .         .  |.");
+                    System.out.println("         |               .                     .            .                  .         .                       .             .   |.");
                 }
 
             } while (centinela!=6);

@@ -170,3 +170,18 @@
 	
 	1. El programa aun no es capaz de detener las canciones
 	2. Hace falta terminar la interfaz grafica de la aplicacion
+
+# Tuesday, May 18
+## ¿Que hemos hecho?
+
+	1. Se soluciono el no poder detener las canciones
+	2. Se terminó la interfaz gráfica
+	3. Se corrigeron varios errores
+	
+## ¿Que vamos a hacer?
+
+	*El programa ya es lo suficientemente estable como para funcionar de manera correcta en la mayoría de los casos, por lo que nos enfocaremos ahora en la presentación
+
+## ¿Que dificultades hemos tenido?
+
+	1. Hubo un error con respecto a los commits del proyecto puesto que se forzó un git push, sin embargo se arregló rápidamente

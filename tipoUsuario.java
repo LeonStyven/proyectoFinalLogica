@@ -25,6 +25,8 @@ public class tipoUsuario {
                 System.out.println("         |         .       .    .       .                                   .                    .              .              ..  |.");
                 System.out.print  ("                                                             Tipo de Usuario:  ");
                 tipoUsuario = teclado.nextLine();
+                System.out.println("         |    ===============================================================================================================      |.");
+
 
 
                 //Posibles errores a la hora de leer un caracter
@@ -62,9 +64,9 @@ public class tipoUsuario {
     public void direccionIP() throws Exception{
 
         InetAddress address = InetAddress.getLocalHost();
-        System.out.println("         |               .                     .           .                   .         .                                    .   |.");
-        System.out.println("         |            .          .  ..  .             .                .               .    .   .   .                 .   .       |.");
-        System.out.println("         |               .            .           .    .   IP Local : "+address.getHostAddress()+"      .     .  .       .   ..           .       |.");
+        System.out.println("         |               .                     .           .                   .         .                                     .   |.");
+        System.out.println("         |            .          .  ..  .             .                .               .    .   .   .                  .   .       |.");
+        System.out.println("         |               .            .           .    .   IP Local : "+address.getHostAddress()+"      .      .  .       .   ..           .       |.");
 
     }
 

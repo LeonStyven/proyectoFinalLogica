@@ -173,7 +173,13 @@ public class ejecucion {
 
 
                 System.out.println(data);
-                System.out.print("<-- Hmmmmm, esto no deberia estar aqui, parece que alguien no hizo bien su trabajo");
+                System.out.println("         |      =============================================================================================================     |.");
+                System.out.println("         |            .      .    .         .    .            .    ______                .           .           .               .|.");
+                System.out.println("         |        .      .     . Hmmmmm, esto no deberia estar aqui, parece que alguien no hizo bien su trabajo    .   ..     .   |.");
+                System.out.println("         |            .      .    .         .    .            .    ______                .           .           .               .|.");
+                System.out.println("         |      =============================================================================================================     |.");
+                System.out.println("         |            .      .    .         .    .            .    ..                    .           .           .               .|.");
+                
                 Thread.sleep(500);
             }
 
@@ -210,29 +216,36 @@ public class ejecucion {
 
         if(centinela == 1){
 
-            
-
-			imprimir("                      Ingrese un numero del 1 al 15 para buscar una cancion, el numero de canciones actuales son: "+(info_canciones.length-1));
+            System.out.println("         |            .      .    .          .    .            .    . .        .          .           .           .             .  |.");
+			imprimir          ("         |    ..    .           .    .     .          .  Indices disponibles: "+(info_canciones.length-1)+" .    .          .    ..   .       . .        .    |.");
+            System.out.println("         |            .      .    .         .    .            .    . .        .          .           .           .                |.");
 			indice_cancion = subOpcion;
+            
 		
 			inicio_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.INICIO_CANCION]);
 			fin_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.FIN_CANCION]);
 		
-			System.out.println();
-			imprimir("                                                           Nombre: "+info_canciones[indice_cancion][ConsoleData.NOMBRE_CANCION]);
-			imprimir("                                                              Autor: "+info_canciones[indice_cancion][ConsoleData.AUTOR_CANCION]);
-			imprimir(" ");
+			imprimir          ("             ..    .        .         ..   .     .    .  Nombre: "+info_canciones[indice_cancion][ConsoleData.NOMBRE_CANCION]+" .           .   .      .           ..      .      . .");
+            imprimir          ("             ..            .           .      .    .     Autor: "+info_canciones[indice_cancion][ConsoleData.AUTOR_CANCION]+" .             .          .     .   .      .      .      ..");
+            System.out.println("         |            .      .    .         .    .            .    . .        .          .           .           .           .    |.");
+
+
 		}
         if(centinela == 2){
-            imprimir("Ingrese indice de la cancion, entre 0 y "+(info_canciones.length-1));
+            
+            System.out.println("         |            .      .    .         .    .            .    . .        .          .           .           .                 |.");
+            imprimir          ("         |   ..      .    .      .    .   .        .   .   Iniciando Reproducción .          ..    .    .         .     .     .    |.");
+            System.out.println("         |            .      .    .         .    .            .    . .        .          .           .           .                 |.");
+
             indice_cancion = subOpcion;
             audio.seleccionarCancion(info_canciones[indice_cancion][ConsoleData.RUTA_CANCION]);
 			audio.reproducir();
         }
         if(centinela == 3){
-            //TODO: Ojo, falta validar el valor ingresado
-            //TODO: Falta darle formato amigable de lectura al usuario 
-            imprimir("Ingrese indice de la cancion, entre 0 y "+(info_canciones.length-1));
+            System.out.println("         |            .      .    .         .    .            .    . .        .          .           .           .       .        |.");
+            imprimir          ("         |   ..      .    .   .    .   .     .   .   indice de la cancion, entre 0 y "+(info_canciones.length-1)+" .          ..    ..         .   .     .    |.");
+            System.out.println("         |            .      .    .         .    .            .    . .        .          .           .           .       .        |.");
+
             indice_cancion = subOpcion;
 
             inicio_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.INICIO_CANCION]);
@@ -245,28 +258,33 @@ public class ejecucion {
         if(centinela == 4){
 
 			audio.detener();
+
+            System.out.println("         |            .      .    .         .    .            .    . .        .          .           .           .       .        |.");
+            imprimir          ("         |   ..      .    .   .    .   .         .   .   Se detuvo la Reproduccion .      .       ..    ..         .   .     .    |.");
+            System.out.println("         |            .      .    .         .    .            .    . .        .          .           .           .       .        |.");
 		}
         if(centinela==5){
             /* La informacion de las canciones esta
             en la matriz info_canciones, acá un ejemplo de como imprimir
             el nombre de la primer canción y su autor */
             
-            //TODO: Ojo, falta validar el valor ingresado
-            imprimir("Ingrese indice de la cancion, entre 0 y "+(info_canciones.length-1));
+            
             indice_cancion = subOpcion;
 
             inicio_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.INICIO_CANCION]);
             fin_letra = ConsoleInput.stringToInt(info_canciones[indice_cancion][ConsoleData.FIN_CANCION]);
 
-            System.out.println();
-            imprimir("Inicio letra "+inicio_letra);
-            imprimir("Fin letra "+fin_letra);
-            imprimir("Nombre "+info_canciones[indice_cancion][ConsoleData.NOMBRE_CANCION]);
-            imprimir("Autor "+info_canciones[indice_cancion][ConsoleData.AUTOR_CANCION]);
-            imprimir("Archivo "+info_canciones[indice_cancion][ConsoleData.RUTA_CANCION]);
+            System.out.println("         |            .      .    .         .    .            .    . .        .          .           .           .       .        |.");
+            imprimir          ("         ..      .    .     .    ..   .      .     .   .     "+(info_canciones[indice_cancion][ConsoleData.NOMBRE_CANCION]).toUpperCase()+" .          ..    ..     .     .    .   . .");
 
-            imprimir("Primera estrofa: "+canciones[inicio_letra]);
-            imprimir("Última estrofa: "+canciones[fin_letra]);
+            System.out.println();
+            imprimir          ("        .    .          .    ..              .    .  Inicio letra: "+inicio_letra+" .               ..            .          .               .       .");
+            imprimir          ("      .           .            .       .        .    Fin letra: "+fin_letra+"        .  ...              .       . .");
+            imprimir          ("            .         .          . .         .       Nombre: "+info_canciones[indice_cancion][ConsoleData.NOMBRE_CANCION]+"        .  ...              .       . .");
+            imprimir          ("         .         .        ..          .      . .   Autor: "+info_canciones[indice_cancion][ConsoleData.AUTOR_CANCION]+"        .  ...              .       . .");
+            imprimir          ("    .       . .        .           .       .    .    Archivo: "+info_canciones[indice_cancion][ConsoleData.RUTA_CANCION]+"        .  ...              .       . .");
+            imprimir          ("               .        .   .          .        .    Primera estrofa: "+canciones[inicio_letra]+"        .  ...              .       . .");
+            imprimir          ("     .      .         .           .            .     Última estrofa: "+canciones[fin_letra]+"        .  ...              .       . .");
             
             //TODO:Explicar como funciona el archivo y como se analiza cada línea
             //TODO:Imprimir la lista completa
