@@ -63,7 +63,7 @@ public class servidor {
             ejecucion.imprimir("         |      .                          .            .   Conexión establecida!        .            .                .           |.");
             System.out.println("         |      .             .          .         .             .             .      .                                .    .      |.");
             System.out.println("         |    ==============================================================================================================       |.");
-            System.out.println("         |      .     .           .    .            .          .           .         .                      .           .     .    |.");
+            System.out.println("         |      .     .           .    .            .          .           .         .     .                 .           .     .    |.");
 
 
             do {

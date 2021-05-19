@@ -2,6 +2,7 @@ import org.fusesource.jansi.AnsiConsole;
 import static org.fusesource.jansi.Ansi.*;
 import static org.fusesource.jansi.Ansi.Color.*;
 import java.util.*;
+import java.math.*;
 
 import java.util.StringTokenizer;
 
@@ -156,7 +157,30 @@ public class ejecucion {
 
                 temp = new StringTokenizer(data[i], caracterEspacio);
 
-                    System.out.print(".       .         .    ..       . .        .     .  ");
+                    int aleatorio = (int)(Math.random() * 9);
+
+                    switch(aleatorio){
+                        case 0: System.out.print(".       .         .    ..       . .        .    .  ");
+                        break;
+                        case 1: System.out.print("   .      .      .    .   .    .    .          .   ");
+                        break;
+                        case 2: System.out.print("   .        .         .    . .      ...       .   .");
+                        break;
+                        case 3: System.out.print("       . .      .  .        .      .     .    .   .");
+                        break;
+                        case 4: System.out.print("   .   .   .    .   .    . .    .   .    .  . .   .");
+                        break;
+                        case 5: System.out.print("      .    . .   .      .      ..      .      .   .");
+                        break;
+                        case 6: System.out.print("  .      .      .        .         .    .     .   .");
+                        break;
+                        case 7: System.out.print("      .      .   .    .      .   .    .     .     .");
+                        break;
+                        case 8: System.out.print("   .    .   .      .    . .. .    .   .    .     . ");
+                        break;
+                        case 9: System.out.print("  . .    .   .    .  .   ...        .         .   .");
+                        break;
+                    }
                 
                     while(temp.hasMoreTokens()){
                         System.out.print(temp.nextToken()+" ");
@@ -239,9 +263,9 @@ public class ejecucion {
 			audio.reproducir();
         }
         if(centinela == 3){
-            System.out.println("         |            .      .    .         .    .            .    . .        .          .           .           .       .        |.");
+            System.out.println("         |            .      .    .         .    .             .    . .        .          .           .           .       .        |.");
             imprimir          ("         |   ..      .    .   .    .   .     .   .   indice de la cancion, entre 0 y "+(info_canciones.length-1)+" .          ..    ..         .   .     .    |.");
-            System.out.println("         |            .      .    .         .    .            .    . .        .          .           .           .       .        |.");
+            System.out.println("         |            .      .    .         .    .             .    . .        .          .           .           .       .        |.");
 
             indice_cancion = subOpcion;
 

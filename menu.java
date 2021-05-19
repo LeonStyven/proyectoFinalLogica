@@ -5,7 +5,7 @@ public class menu {
         //Programa programa = new Programa();
 		ejecucion ejecucion = new ejecucion();
 
-		System.out.println("         |            .      .    .         .    .            .    . .        .          .           .           .               |.");
+		System.out.println("         |            .      .    .         .    .            .    .  .         .           .           .           .              |.");
 		System.out.println("         |    ==============================================================================================================       |.");
         ejecucion.imprimir("         |         .        .  .      .             -   Ingrese una opción así:      -         -            -        .             |.");
 		ejecucion.imprimir("         |                                  ..          1. Buscar canción          -          -                    .          .    |.");
@@ -15,7 +15,7 @@ public class menu {
 		ejecucion.imprimir("         |        .            .                        5. Imprimir informacion de una cancion        .              -      ..     |.");
 		ejecucion.imprimir("         |                           .          .       6. Salir                       .          -         -             .        |.");
 		System.out.println("         |    ==============================================================================================================       |.");
-		System.out.println("         |            .      .    .         .    .            .    . .        .          .           .           .               |.");
+		System.out.println("         |            .      .    .         .    .            .    .    .        .          .           .           .              |.");
 
 
 
